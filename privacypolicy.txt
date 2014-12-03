@@ -1,0 +1,9 @@
+Hope Gang Contests, created by Leo Herzog (Agent L Productions), is a website to help organize and collect photoshop contests from The Hope Gang (https://facebook.com/groups/thehopegang).
+
+It uses Facebook Login (https://developers.facebook.com/docs/facebook-login/) to show the current and past photo galleries from the group.
+
+hopegangcontests.com will NEVER record or store your Facebook login credentials. The site may leave a cookie on your computer with your Facebook credentials so that the photo galleries from the group are visible. However, the website will never store a database of users.
+
+The site may also use analytics platforms such as Google Analytics to anonymously monitor web traffic.
+
+We promise to always value your privacy, and will only use Facebook Login to display relevant data. Nothing else.
