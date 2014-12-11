@@ -3,8 +3,8 @@
 ============================================================= */ 
 
 var myApp = '852976671421334';
-var albumNow = '1530024997270481'; // id of the 'current' album
-var albumOld = '1530187357254245'; // id of the 'past submission' album
+var albumNow = '751426244936485'; // id of the 'current' album
+var albumOld = '743512515727858'; // id of the 'past submission' album
 
 /* =============================================================
 	Includes
