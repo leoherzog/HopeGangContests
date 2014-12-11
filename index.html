@@ -51,7 +51,7 @@
             <li><a href="#current" data-toggle="collapse" data-target=".navbar-collapse">This Week's Photoshop Contest</a></li>
             <li><a href="#rules" data-toggle="collapse" data-target=".navbar-collapse">Rules/Submit</a></li>
             <li><a href="#past" data-toggle="collapse" data-target=".navbar-collapse">Previous Contests</a></li>
-            <li><a href="javascript:removeAPP()" data-toggle="collapse" data-target=".navbar-collapse">Logout Facebook APP</a></li>
+            <li><a href="javascript:logoutAPP()" data-toggle="collapse" data-target=".navbar-collapse">Logout Facebook APP</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -64,9 +64,15 @@
             <h1>Current Submissions</h1>
           </div>
           <div class="embed-responsive embed-responsive-16by9 jumbotron">
-            <p><ul class="rslides" id="slider">
-                <li>Loading album...</li>
-            </ul></p>
+            <p>
+              <ul class="rslides" id="slider">
+              </ul>
+
+              <div class='divCheckingFacebook'>Checking facebook...</div>
+              <div class='divButtonFacebook' style='display:none; text-align:center'><img src='facebook.png' style='width:250px; cursor:pointer' onclick='javascript:loginAPP()'/> </div>
+              <div class='divLoadingAlbum' style='display:none'>Loading album...</div>
+
+            </p>
           </div>
           <p><a href="#" class="btn btn-lg btn-primary">Link to Facebook Album</a></p>
           <br />
@@ -93,10 +99,14 @@
             <h1>Past Submissions</h1>
           </div>
           <div class="embed-responsive embed-responsive-16by9 jumbotron">
-              <p><ul class="rslides" id="slider">
-                  <li><img src="//www.gstatic.com/webp/gallery/4.jpg" alt=""></li>
-                  <li><img src="//www.gstatic.com/webp/gallery/5.jpg" alt=""></li>
-              </ul></p>
+              <p>
+                <ul class="rslides" id="slider">
+                </ul>
+                
+                <div class='divCheckingFacebook'>Checking facebook...</div>
+                <div class='divButtonFacebook' style='display:none; text-align:center'><img src='facebook.png' style='width:250px; cursor:pointer' onclick='javascript:loginAPP()'/> </div>
+                <div class='divLoadingAlbum' style='display:none'>Loading album...</div>
+              </p>
           </div>
           <p><a href="#" class="btn btn-lg btn-primary">Link to Facebook Album</a></p>
           <br />
