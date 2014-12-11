@@ -1,6 +1,6 @@
-var myApp = '852976671421334';
-var albumNow = '320773888046615'; // id of the 'current' album
-var albumOld = '314117022045635'; // id of the 'past submission' album
+var myApp = '259817854185940';
+var albumNow = '1530024997270481'; // id of the 'current' album
+var albumOld = '1530187357254245'; // id of the 'past submission' album
 
 (function (d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -41,7 +41,7 @@ window.fbAsyncInit = function () {
 	    aToken = response.authResponse.accessToken;
 	    sigRequest = response.authResponse.signedRequest;
 		getPictures(albumNow,'#current');
-		getPictures(albumNow,'#past');
+		getPictures(albumOld,'#past');
 	}
 
 
