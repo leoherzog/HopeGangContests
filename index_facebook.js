@@ -1,3 +1,7 @@
+var myApp = '852976671421334';
+var albumNow = '320773888046615'; // id of the 'current' album
+var albumOld = '314117022045635'; // id of the 'past submission' album
+
 (function (d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) { return; }
@@ -7,10 +11,15 @@
 }(document, 'script', 'facebook-jssdk'));
 
 
+function removeAPP() {
+	FB.api('/me/permissions', 'delete', function(response) {
+    	location.reload();
+	});
+}
+
 window.fbAsyncInit = function () {
     FB.init({
-        appId: '259817854185940',
-        //appId: '852976671421334',
+        appId: myApp,
         xfbml: true, version: 'v2.2'
     });
 
@@ -18,43 +27,28 @@ window.fbAsyncInit = function () {
 
 	function getStatusCallback(response) {
 		console.log('getStatusCallback',response);
-	    if (response.status === 'connected') {
-	    	aToken = response.authResponse.accessToken;
-	    	getAlbuns();
-	    }
-	    else FB.login(loginCallback,{scope: 'user_photos,user_groups'});
+	    if (response.status === 'connected') getData(response);
+	    else FB.login(loginCallback,{scope: 'user_photos'});
 	}
 
 	function loginCallback(response) {
 		console.log('loginCallback',response);
-		if (response.status == 'connected') getAlbuns();
+		if (response.status == 'connected') getData(response);
 		if (response.status == 'not_authorized') location.href = 'notlogged.html';
 	}
 
-	function getAlbuns() {
-		console.log('getAlbuns()');
-		var groupID = 295111260612878;	
-
-		var currentID = '320773888046615';
-		var pastID    = '314117022045635';
-
-		getPictures('10151358357091755','#current');
-		return;
-
-		FB.api("/"+groupID+"/albums", function (response) {
-			console.log(response);
-			if (response && !response.error) {
-				for (i in response.data) {
-					var album = response.data[i];
-					getPictures(album.id);
-				}
-			}
-		});
+	function getData(response) {
+	    aToken = response.authResponse.accessToken;
+	    sigRequest = response.authResponse.signedRequest;
+		getPictures(albumNow,'#current');
+		getPictures(albumNow,'#past');
 	}
 
+
 	function getPictures(idGallery,selector) {
-		FB.api("/"+idGallery+"/photos", function (response) {
+		FB.api("/"+idGallery+"/photos?signed_request="+sigRequest+"&access_token="+aToken, function (response) {
 			if (response && !response.error) {
+				console.log('getPictures',response.data);
 				if (selector) {
 					var $ul = $(selector+' .rslides').empty();
 					for (i in response.data) {
@@ -66,7 +60,6 @@ window.fbAsyncInit = function () {
 				    $(selector+' .rslides').responsiveSlides({pager: true, nav: true, pause: true});
 				}
 			}
-
 		});
 	}
 
