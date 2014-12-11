@@ -2,7 +2,7 @@
 	Config
 ============================================================= */ 
 
-var myApp = '259817854185940';
+var myApp = '852976671421334';
 var albumNow = '1530024997270481'; // id of the 'current' album
 var albumOld = '1530187357254245'; // id of the 'past submission' album
 
