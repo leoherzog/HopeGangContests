@@ -39,11 +39,11 @@
             margin-top: -45px;
         }
 
-            .centered-btns_nav.next {
-                left: auto;
-                background-position: right top;
-                right: 0;
-            }
+        .centered-btns_nav.next {
+            left: auto;
+            background-position: right top;
+            right: 0;
+        }
 
         .centered-btns_tabs {
             display: none;
@@ -78,7 +78,7 @@
                     <li><a class='toplink' href="#rules" data-toggle="collapse" data-target=".navbar-collapse">Rules/Submit</a></li>
                     <li><a class='toplink' href="#past" data-toggle="collapse" data-target=".navbar-collapse">Previous Contests</a></li>
                     <li id='divLogout' style='display:none'>
-                        <a href="javascript:logoutAPP()" data-toggle="collapse" data-target=".navbar-collapse">Logout Facebook APP</a>
+                        <a href="javascript:logoutAPP()" data-toggle="collapse" data-target=".navbar-collapse">Logout</a>
                     </li>
                 </ul>
             </div><!--/.nav-collapse -->
@@ -96,7 +96,7 @@
                     <ul class="rslides" id="slider"></ul>
 
                     <div class='divCheckingFacebook'>Checking facebook...</div>
-                    <div class='divButtonFacebook' style='display:none; text-align:center'><img src='facebook.png' style='width:250px; cursor:pointer' onclick='javascript:loginAPP()' /> </div>
+                    <div class='divButtonFacebook' style='display:none; text-align:center'><a class="btn btn-primary btn-lg" onlick="javascript:loginAPP()">Login to Facebook</a></div>
                     <div class='divLoadingAlbum' style='display:none'>Loading album...</div>
 
                 </p>
@@ -130,7 +130,7 @@
                     <ul class="rslides" id="slider"></ul>
 
                     <div class='divCheckingFacebook'>Checking facebook...</div>
-                    <div class='divButtonFacebook' style='display:none; text-align:center'><img src='facebook.png' style='width:250px; cursor:pointer' onclick='javascript:loginAPP()' /> </div>
+                    <div class='divButtonFacebook' style='display:none; text-align:center'><<a class="btn btn-primary btn-lg" onlick="javascript:loginAPP()">Login to Facebook</a></div>
                     <div class='divLoadingAlbum' style='display:none'>Loading album...</div>
                 </p>
             </div>
