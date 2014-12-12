@@ -30,9 +30,36 @@
 
   </head>
 
-  <body role="document">
+<style type='text/css'>
+.centered-btns_nav {
+  z-index: 3;
+  position: absolute;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  top: 50%;
+  left: 0;
+  opacity: 0.7;
+  text-indent: -9999px;
+  overflow: hidden;
+  text-decoration: none;
+  height: 61px;
+  width: 38px;
+  background: transparent url("img/themes.gif") no-repeat left top;
+  margin-top: -45px;
+}
+.centered-btns_nav.next {
+  left: auto;
+  background-position: right top;
+  right: 0;
+}
+.centered-btns_tabs {
+  display:none;
+}
+</style>
 
-    <div id='status' style='position:fixed; top:0px; left:0px; z-index:9999; background:white; padding:20px'></div>
+
+
+
+  <body role="document">
 
     <!-- Fixed navbar -->
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -48,10 +75,12 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#current" data-toggle="collapse" data-target=".navbar-collapse">This Week's Photoshop Contest</a></li>
-            <li><a href="#rules" data-toggle="collapse" data-target=".navbar-collapse">Rules/Submit</a></li>
-            <li><a href="#past" data-toggle="collapse" data-target=".navbar-collapse">Previous Contests</a></li>
-            <li><a href="javascript:logoutAPP()" data-toggle="collapse" data-target=".navbar-collapse">Logout Facebook APP</a></li>
+            <li><a class='toplink' href="#current" data-toggle="collapse" data-target=".navbar-collapse">This Week's Photoshop Contest</a></li>
+            <li><a class='toplink' href="#rules" data-toggle="collapse" data-target=".navbar-collapse">Rules/Submit</a></li>
+            <li><a class='toplink' href="#past" data-toggle="collapse" data-target=".navbar-collapse">Previous Contests</a></li>
+            <li id='divLogout' style='display:none'>
+              <a href="javascript:logoutAPP()" data-toggle="collapse" data-target=".navbar-collapse">Logout Facebook APP</a>
+            </li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

@@ -1,10 +1,10 @@
 !function ($) {
     $(function(){
 	    // $('#current, #rules, #past').carousel({});
-	    $('#rules, #past').carousel({});
+	    $('#rules').carousel({});
 
 	    var $root = $('html, body');
-	    $('a').click(function() {
+	    $('a.toplink').click(function() {	    	
 		    var href = $.attr(this, 'href');
 		    $root.animate({
 			    scrollTop: $(href).offset().top
@@ -17,9 +17,11 @@
 }(window.jQuery)
 
 $(function () {
-    $("#rules .rslides, #past .rslides").responsiveSlides({
+    //$(".rslides").responsiveSlides({
+    $("#rules .rslides").responsiveSlides({
         pager: true,
         nav: true,
-        pause: true
+        pause: true,
+        namespace: "centered-btns"
     });
 });

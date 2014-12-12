@@ -2,9 +2,17 @@
 	Config
 ============================================================= */ 
 
+// Leo
 var myApp = '852976671421334';
 var albumNow = '751426244936485'; // id of the 'current' album
 var albumOld = '743512515727858'; // id of the 'past submission' album
+
+/*
+// Murilo
+var myApp = '259817854185940';
+var albumNow = '1530024997270481'; // id of the 'current' album
+var albumOld = '1530187357254245'; // id of the 'past submission' album
+*/
 
 /* =============================================================
 	Includes
@@ -32,7 +40,9 @@ function loginAPP() {
 }
 
 function logoutAPP() {
+	$('#divLogout').html('<a href="#">Revoking permissions...</a>');
 	FB.api('/me/permissions', 'delete', function(response) {
+		$('#divLogout').html('<a href="#">Reloading page...</a>');
     	location.reload();
 	});
 }
@@ -65,6 +75,7 @@ function getData(response) {
 	$('.divCheckingFacebook').hide();
 	$('.divLoadingAlbum').show();
 	console.log('getData()');
+	$('#divLogout').fadeIn();
     aToken = response.authResponse.accessToken;
     sigRequest = response.authResponse.signedRequest;
 	getPictures(albumNow,'#current');
@@ -85,7 +96,7 @@ function getPictures(idGallery,selector) {
 					var $img = $("<img>",{'src':photo.source}).appendTo($li);
 				}
 				$(selector).carousel({});
-			    $(selector+' .rslides').responsiveSlides({pager: true, nav: true, pause: true});
+			    $(selector+' .rslides').responsiveSlides({pager: true, nav: true, pause: true, namespace: "centered-btns"});
 			}
 		} else {
 			$(selector+' .divLoadingAlbum').show().html(response.error.message);
